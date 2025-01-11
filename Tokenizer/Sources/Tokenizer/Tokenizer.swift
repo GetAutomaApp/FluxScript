@@ -71,6 +71,9 @@ public class Tokenizer {
                 addToken(type: .exponentiation, literal: "^", startLine: line)
             case "0", "1", "2", "3", "4", "5", "6", "7", "8", "9":
                 try number(first: String(literal))
+            case _ where literal.isLetter:
+                // TODO: Parse This (identifiers only)
+                break
             case " ", "\t":
                 break
             default:
