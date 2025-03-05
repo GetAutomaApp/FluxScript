@@ -19,7 +19,13 @@ let source3 = """
 + - * / ** % ^
 """
 
-let fullSource = "\(source)\n\(source2)\n\(source3)"
+let source4 = """
+funkydoodle
+var
+2 * a * 1.1 + 9^10
+"""
 
-let tokenizer = Tokenizer(source: fullSource)
+let fullSource = "\(source)\n\(source2)\n\(source3)\n\(source4)"
+
+let tokenizer = Tokenizer(source: source4)
 print(try tokenizer.scanTokens())
