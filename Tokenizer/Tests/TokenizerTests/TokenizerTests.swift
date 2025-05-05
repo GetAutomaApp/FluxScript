@@ -102,7 +102,7 @@ struct TokenizerTests {
                 456
                 """,
                 [
-                    Token(literal: "123", type: .number, lineStart: 2, lineEnd: 2, start: 0, end: 4),
+                    Token(literal: "123", type: .number, lineStart: 1, lineEnd: 1, start: 0, end: 3),
                     Token(literal: "456", type: .number, lineStart: 3, lineEnd: 3, start: 5, end: 8)
                 ]
             ),
@@ -153,16 +153,3 @@ struct TokenizerTests {
         }
     }
 }
-
-// (
-//     tokens → [
-//         Tokenizer.Token(literal: "123", type: Tokenizer.TokenType.number, lineStart: 2, lineEnd: 2, start: 0, end: 4),
-//         Tokenizer.Token(literal: "456", type: Tokenizer.TokenType.number, lineStart: 3, lineEnd: 3, start: 5, end: 8)
-//     ]
-// ) ==
-// (
-//     expectedOutputs → [
-//         Tokenizer.Token(literal: "123", type: Tokenizer.TokenType.number, lineStart: 1, lineEnd: 1, start: 0, end: 3),
-//         Tokenizer.Token(literal: "456", type: Tokenizer.TokenType.number, lineStart: 3, lineEnd: 3, start: 6, end: 9)
-//     ]
-// )

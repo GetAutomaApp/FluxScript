@@ -190,16 +190,14 @@ public class Tokenizer {
 
     func number(first: String) throws {
         var number = first
+        let startLine = line
         while !isAtEnd() {
             let next = peek()
             if next == "\n" {
-                advance()
-                line += 1
                 break
             }
 
             if next == " " {
-                advance()
                 break
             }
 
@@ -224,7 +222,7 @@ public class Tokenizer {
             throw TokenizerError.invalidNumber
         }
 
-        addToken(type: .number, literal: number, startLine: line)
+        addToken(type: .number, literal: number, startLine: startLine)
     }
 
     func identifier(first: Character) throws {
